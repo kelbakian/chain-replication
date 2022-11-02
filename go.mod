@@ -1,4 +1,4 @@
-module testplayground
+module chain-replication-main
 
 go 1.19
 

@@ -2,11 +2,11 @@ package main
 
 import (
 	"bufio"
+	"chain-replication-main/chain"
 	"flag"
 	"log"
 	"net"
 	"os"
-	"chain-replication-main/chain"
 )
 
 func main() {
@@ -33,18 +33,14 @@ func main() {
 	}
 
 	s := chain.NewServer(chain.Addrs[id], id)
-	//s := chain.NewServer(addr, id)
 	if head == true {
 		s.IsHead = true
 	}
 	if tail == true {
 		s.IsTail = true
 	}
-	//chain.Chain[id] = s
-	//fmt.Printf("chain map: %v\n", chain.Chain)
 
 	listener, err := net.Listen("tcp", chain.Addrs[id])
-	//listener, err := net.Listen("tcp", addr)
 	if err != nil {
 		log.Fatalln(err)
 	}

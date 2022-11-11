@@ -22,19 +22,18 @@ type Operation struct {
 	OperationType OpType
 	Key           int
 	Value         string
-	MsgId         int64
+	MsgId         uint64
 	ClientId      int
 }
 
 type Ack struct {
 	Noti     string //either "ack" if successful, or hypothetically get a "msg failed" type notif
-	Msg      int64  //indicates which message/operation to delete from the buffer
+	Msg      uint64 //indicates which message/operation to delete from the buffer
 	ClientId int    //which client's op this was
 }
 
 type Registration struct {
 	ClientId int
-	Addr     string
 }
 
 func Check(e error) error {
@@ -42,6 +41,17 @@ func Check(e error) error {
 		panic(e)
 	}
 	return nil
+}
+
+// Data struct for logging stress test results
+type Measurement struct {
+	Op     string //int
+	Key    int
+	Val    string
+	Start  float64
+	End    float64
+	Client int
+	MsgId  uint64
 }
 
 var Addrs []string

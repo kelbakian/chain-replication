@@ -1,7 +1,5 @@
 Extremely simplistic implementation of chain replication; no configuration manager to manage the chain's state and/or handle failures.
 
-Also make sure to note the module defined by go.mod file, do not try to run app outside of the module!
-
 To run:
 
 -start server processes before client

@@ -1,4 +1,4 @@
-Extremely simplistic implementation of chain replication; no configuration manager to manage the chain's state and/or handle failures.
+Simple chain replication implementation; no configuration manager to manage the chain's state and/or handle failures.
 
 To run:
 
